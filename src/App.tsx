@@ -1,21 +1,25 @@
 //Main Component
+import UserCard from "./UserCard"; // Importing UserCard component
 
 function App() {
-  // Burası TypeScript Alanı
-  const username: string = "Okcain";
-  const appVersion: number = 1.0;
-
-  // JSX (Görsel Alan) Alanı: Burada HTML benzeri yapılar kullanılır
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial"}}>
-      <h1>Hello React! 👋</h1>
-
-      {/* Süslü parantezler ile TypeScript değişkenlerini JSX içinde kullanabiliriz */}
-      <p>Welcome back, <strong>{username}</strong>.</p>
-
-      <p>Running App Version: {appVersion}</p>
-
-      <button>Click Me (Not active yet)</button>
+    <div style={{ display: "flex", gap: "20px", padding: "40px", flexWrap: "wrap" }}>
+      {/* Rendering multiple UserCard components with different props */}
+      <UserCard
+        username="Alice Johnson"
+        jobTitle="Frontend Engineer"
+        isActive={true}
+      />
+      <UserCard
+        username="Bob Smith"
+        jobTitle="Backend Developer"
+        isActive={false}
+      />
+      <UserCard
+        username="Charlie Brown"
+        jobTitle="UI/UX Designer"
+        isActive={true}
+      />
     </div>
   );
 }
